@@ -1,0 +1,14 @@
+server:
+  port: 8761 #修改端口号
+
+eureka:
+  instance:
+    hostname: localhost #eureka服务端起个名字
+  client:
+    #由于自己就是服务器，不需要注册到自己
+    registerWithEureka: false
+    #由于自己就是服务器，不需要注册到自己
+    fetchRegistry: false
+    serviceUrl:
+      #注册中心的地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
